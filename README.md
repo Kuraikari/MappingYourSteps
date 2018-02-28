@@ -12,5 +12,12 @@ This project will be a step-counter with geolocation, where you can see your act
 Here are the features listed in two different categories. Non-functional and functional, whereas the first one describes features which aren't technically or not a part of a function. 
 
 ### Functional
+- Geolocation
+- Step-counter and step-detector
+- Track is viewable 
+- Steps from startpoint to endpoint
 
 ### Non-Functional
+- Time (From A to B)
+- Track-length divided by number of steps
+- Persistent
