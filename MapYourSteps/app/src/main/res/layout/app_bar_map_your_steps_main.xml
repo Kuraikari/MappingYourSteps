@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.egzonneziri.mapyoursteps.MapYourStepsMain">
+    tools:context="com.example.egzonneziri.mapyoursteps.StepCounterMain">
+
 
     <EditText
-        android:id="@+id/txtStepCount"
+        android:id="@+id/tv_steps"
         android:layout_width="259dp"
         android:layout_height="64dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="140dp"
         android:ems="10"
-        android:inputType="number"
-        android:text="8191589195"
+        android:inputType="text|number"
         android:textAlignment="center"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="left|center"
@@ -54,5 +54,29 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_steps"
+        app:layout_constraintTop_toBottomOf="@+id/tv_steps" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/stop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_steps"
+        app:layout_constraintTop_toBottomOf="@+id/tv_steps" />
 
 </android.support.constraint.ConstraintLayout>
