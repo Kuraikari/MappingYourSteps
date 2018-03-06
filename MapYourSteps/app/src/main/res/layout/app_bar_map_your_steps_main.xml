@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.egzonneziri.mapyoursteps.StepCounterMain">
+    tools:context="com.example.egzonneziri.mapyoursteps.MapYourStepsMain">
 
     <FrameLayout
         android:id="@+id/content_frame"
@@ -43,57 +43,16 @@
         android:layout_weight="1"
         tools:layout_editor_absoluteY="-5dp" />
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <EditText
-            android:id="@+id/tv_steps"
-            android:layout_width="374dp"
-            android:layout_height="46dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:ems="10"
-            android:inputType="text|number"
-            android:textAlignment="center"
-            app:layout_anchor="@+id/include"
-            app:layout_anchorGravity="left|center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="185dp" />
-
-        <Button
-            android:id="@+id/btn_stop"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="@string/stop"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="312dp" />
-
-        <Button
-            android:id="@+id/btn_start"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:text="@string/start"
-            app:layout_constraintEnd_toStartOf="@+id/btn_stop"
-            app:layout_constraintHorizontal_bias="0.687"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="312dp" />
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="395dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            android:layout_marginBottom="40dp"
-            android:layout_marginEnd="88dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@android:drawable/ic_dialog_email" />
-    </android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="88dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </android.support.v4.widget.DrawerLayout>
