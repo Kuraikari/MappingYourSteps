@@ -27,7 +27,8 @@ import android.hardware.SensorEventListener;
  * Created by zian.wermelinger on 05.03.2018.
  */
 
-public class StepCounterMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SensorEventListener, StepListener {
+public class StepCounterMain extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener, SensorEventListener, StepListener {
     //
     private TextView textView;
     private Button BtnStart, BtnStop;
@@ -45,7 +46,7 @@ public class StepCounterMain extends AppCompatActivity implements NavigationView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_map_your_steps_main);
+        setContentView(R.layout.activity_map_your_steps_main);
 
         // Get an instance of the SensorManager
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -60,7 +61,7 @@ public class StepCounterMain extends AppCompatActivity implements NavigationView
         BtnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                Snackbar.make(arg0, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(arg0, "Step-Counter has been started!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 numSteps = 0;
                 sensorManager.registerListener(StepCounterMain.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
@@ -70,7 +71,7 @@ public class StepCounterMain extends AppCompatActivity implements NavigationView
         BtnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                Snackbar.make(arg0, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(arg0, "Step-Counter has been stopped!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 sensorManager.unregisterListener(StepCounterMain.this);
             }
