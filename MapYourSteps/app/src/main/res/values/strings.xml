@@ -80,4 +80,13 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
+    <string name="location_permission_denied">Location permission denied</string>
+    <string name="permission_required_toast">Permission required</string>
+    <string name="permission_rationale_location">Permission location</string>
+    <string name="daily_steps">Daily Steps</string>
+    <string name="map">Map</string>
+    <string name="setting">Setting</string>
+    <string name="communicate">Communicate</string>
+    <string name="about_us">About Us</string>
+    <string name="google_maps_key">AIzaSyAZubM3PnkOBrV8saucgiarNSIYBsUS4t0</string>
 </resources>

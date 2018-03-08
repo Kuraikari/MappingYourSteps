@@ -5,5 +5,7 @@ package com.example.egzonneziri.mapyoursteps;
  */
 
 public interface StepListener {
+    void onDrawerOpened();
+
     public void step(long timeNs);
 }

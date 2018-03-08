@@ -6,24 +6,30 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_dailysteps"
+            android:checkable="true"
+            android:enabled="true"
             android:icon="@android:drawable/ic_menu_myplaces"
-            android:title="Daily Steps" />
+            android:title="@string/daily_steps" />
         <item
             android:id="@+id/nav_map"
+            android:checkable="true"
+            android:enabled="true"
             android:icon="@android:drawable/ic_menu_mapmode"
-            android:title="Map" />
+            android:title="@string/map" />
         <item
             android:id="@+id/nav_settings"
+            android:checkable="true"
+            android:enabled="true"
             android:icon="@android:drawable/ic_menu_manage"
-            android:title="Setting" />
+            android:title="@string/setting" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/communicate">
         <menu>
             <item
                 android:id="@+id/nav_aboutus"
                 android:icon="@android:drawable/ic_menu_help"
-                android:title="About Us" />
+                android:title="@string/about_us" />
         </menu>
     </item>
 

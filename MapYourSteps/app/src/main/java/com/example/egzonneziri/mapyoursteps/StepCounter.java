@@ -1,18 +1,14 @@
 package com.example.egzonneziri.mapyoursteps;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -20,19 +16,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.hardware.SensorEventListener;
 
 /**
- * Created by zian.wermelinger on 05.03.2018.
+ * Created by egibo on 07.03.2018.
  */
 
-public class StepCounterMain extends AppCompatActivity
+public class StepCounter extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, SensorEventListener, StepListener {
     //
     private TextView textView;
-    private Button BtnStart, BtnStop, BtnCheat;
+    private Button BtnStart, BtnStop;
     private Toolbar toolbar;
     private FloatingActionButton fab;
     private DrawerLayout drawer;
@@ -58,7 +54,6 @@ public class StepCounterMain extends AppCompatActivity
         textView = (TextView) findViewById(R.id.tv_steps);
         BtnStart = (Button) findViewById(R.id.btn_start);
         BtnStop = (Button) findViewById(R.id.btn_stop);
-        BtnCheat = (Button) findViewById((R.id.btn_cheat));
 
         BtnStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +61,7 @@ public class StepCounterMain extends AppCompatActivity
                 Snackbar.make(arg0, "Step-Counter has been started!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 numSteps = 0;
-                sensorManager.registerListener(StepCounterMain.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
+                sensorManager.registerListener(StepCounter.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
             }
         });
 
@@ -75,15 +70,7 @@ public class StepCounterMain extends AppCompatActivity
             public void onClick(View arg0) {
                 Snackbar.make(arg0, "Step-Counter has been stopped!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                sensorManager.unregisterListener(StepCounterMain.this);
-            }
-        });
-
-        BtnCheat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(StepCounterMain.this, MapsActivity.class);
-                startActivity(intent);
+                sensorManager.unregisterListener(StepCounter.this);
             }
         });
 
@@ -120,7 +107,6 @@ public class StepCounterMain extends AppCompatActivity
                     event.timestamp, event.values[0], event.values[1], event.values[2]);
         }
     }
-
     @Override
     public void onDrawerOpened(){
         drawer.bringToFront();
@@ -172,14 +158,14 @@ public class StepCounterMain extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_dailysteps) {
-
+            Intent intent = new Intent (this, StepCounter.class);
+            startActivity(intent);
         } else if (id == R.id.nav_map) {
-            Intent intent = new Intent(StepCounterMain.this, MapsActivity.class);
+            Intent intent = new Intent(this, MapsActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_settings) {
-            Intent intent = new Intent(StepCounterMain.this, SettingsActivity.class);
-            startActivity(intent);
+
         }   else if (id == R.id.nav_aboutus) {
 
         }
